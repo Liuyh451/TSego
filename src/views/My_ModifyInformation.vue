@@ -1,3 +1,4 @@
+
 <template>
     <div class="右侧页面">
         <el-card class="页面内容">
@@ -9,12 +10,14 @@
                     :on-change="handleChange"
                     :show-file-list="false"
                     >
-                    <el-avatar :size="100" :src="用户信息.avatar" @error="true">
+                    <el-avatar :size="100" :src="用户信息.userurl" @error="true">
                         <img src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
                     </el-avatar>
                     </el-upload>
                 </div>
-                <div class="用户名">点击头像框更新头像</div>
+                <div class="用户名">点击头像框更新头像
+                   
+                </div>
             </div>
             <div class="表单">
                 <div class="性别和年龄">
@@ -36,9 +39,9 @@
                         </div>
                     </div>
                     <div class="家乡 sb">
-                        <span class="内容标题">家乡：</span>
+                        <span class="内容标题">邮箱：</span>
                             <div class="家乡输入框">
-                                <el-input v-model="用户信息.hometown" placeholder="请输入您的家乡"></el-input>
+                                <el-input v-model="用户信息.email" placeholder="请输入您的邮箱"></el-input>
                             </div>
                     </div>
                 </div>
@@ -53,10 +56,10 @@
                     </el-input>
                 </div>
                 <div class="食物爱好 sb">
-                    <span class="内容标题">食物爱好：</span>
+                    <span class="内容标题">手机号：</span>
                     <span class="标题对应内容">
                         <div class="食物爱好输入框">
-                            <el-input v-model="用户信息.foodPreference" placeholder="请输入您喜好的食物"></el-input>
+                            <el-input v-model="用户信息.phone" placeholder="请输入手机号"></el-input>
                         </div>
                     </span>
                 </div>
@@ -64,7 +67,7 @@
                     <span class="内容标题">个人标签：</span>
                     <span class="标题对应内容">
                         <div class="个人标签输入框">
-                            <el-input v-model="用户信息.label" placeholder="请输入您的河马标签"></el-input>
+                            <el-input v-model="用户信息.label" placeholder="请输入您的天生标签"></el-input>
                         </div>
                     </span>
                 </div>
@@ -75,15 +78,23 @@
         </el-card>
     </div>
 </template>
-
 <script>
 const axios = require('axios');
 export default {
     methods:{
         submit(){
-            axios.post('/api/user/information/modify',this.用户信息).then(resp=>{
+            let userdata={
+                username:this.用户信息.username,
+                gender:this.用户信息.gender,
+                age:this.用户信息.age,
+                signature:this.用户信息.signature,
+                email:this.用户信息.email,
+                phone:this.用户信息.phone,
+                userurl:this.imgurl
+            }
+            axios.post('http://localhost:9090/user/information/modify',userdata).then(resp=>{
                 // console.log(resp.data.code);
-                if (resp.data.code===200){
+                if (resp.data.code==200){
                     this.$notify.success({
                         title: '个人信息修改成功',
                         message: '个人信息已更新',
@@ -101,49 +112,47 @@ export default {
         },
         handleChange(file,fileList){
             this.fileList=fileList
-            this.用户信息.avatar=URL.createObjectURL(file.raw)
+            console.log(file.raw)
+            this.用户信息.userurl=URL.createObjectURL(file.raw)
             this.uploadimg();
         },
         uploadimg(){
-            const formData = new FormData();
-            formData.set('file', this.fileList[this.fileList.length-1].raw);
-            axios.defaults.headers.common['Authorization']=JSON.parse(localStorage.currentuser).token;
-            axios.post("/api/user/upload",formData).then(rep=>{
-                if (rep.data.code===200){
+        let payload = new FormData()
+        payload.append('image', this.fileList[this.fileList.length-1].raw)
+axios.post('/proxy/upload?expiration=259200&key=c4d92394fcd3b259a463721f068c762e', payload)
+    .then((response) => {
+        if (response.data.status==200){
                     this.$notify.success({
-                        title: '头像更新成功',
-                        message: '个人头像已更新',
+                        title: '图片上传成功',
+                        message: '图片上传成功',
                         offset: 70
                     });
                 }
-            })
+        console.log('response', response)
+        this.imgurl=response.data.data.image.url
+        console.log('this.imgurl', this.imgurl)
+        console.log('success')
+    })
+    .catch((error) => {
+        console.log('error', error)
+        alert('try agian')
+    }) 
         },
     },
     data(){
         return{
             fileList:'',
+            imgurl:'',
             用户信息: {
-                // "id": 30,//
-                // "username": "河马先生",//
-                // "email": "12456789003@123.com",
-                // "phone": "18293635616",
-                // "avatar": "http://47.106.193.0:8080/upload/2021/07/23/c66d1d2172c740f2bfcf0d762348da03.png",//
-                // "gender": "男",
-                // "age": 19,
-                // "foodPreference": "新鲜水果",
-                // "signature": "我爱吃！",
-                // "hometown": "甘肃省",
-                // "residentArea": "东南大学九龙湖校区",
-                // "label": "喜欢清淡食物",
-                // "createTime": "2021-07-02 12:05:24"//
             }
         } 
     },
     created(){
-        
+        let name=JSON.parse(localStorage.currentuser).data.username
         axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-        axios.post('http://47.106.193.0:8080/api/user/information').then(resp=>{
-            this.用户信息=resp.data.data.user;
+        axios.post('http://localhost:9090/user/information',{username:name}).then(resp=>{
+            console.log(resp);
+            this.用户信息=resp.data.data;
         })
         // alert('fuck');
         

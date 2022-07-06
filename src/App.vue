@@ -29,6 +29,16 @@ export default {
         Navbar,
         Header
     },
+    /* 注意：刷新和返回键均会清除 */
+/*    mounted(){
+            // 关闭浏览器窗口的时候清空浏览器缓存在localStorage的数据
+            window.onbeforeunload = function () {
+                var storage = window.localStorage;
+                storage.clear()
+            }
+        }  */
+    /* 注意：刷新和返回键均会清除 */
+
 }
 </script>
 

@@ -7,25 +7,25 @@
         <div id="展示区下侧">
             <div id="下侧展示块">
                 <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                <div id="展示块文字"><p id="展示块文字上">天生易购</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
             </div>
             <div id="下侧展示块">
                 <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                <div id="展示块文字"><p id="展示块文字上">天生易购</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
             </div>
             <div id="下侧展示块">
                 <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                <div id="展示块文字"><p id="展示块文字上">天生易购</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
             </div>
             <div id="下侧展示块">
                 <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                <div id="展示块文字"><p id="展示块文字上">天生易购</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
             </div>
         </div>
         <div id="二维码区">
-            <img src="../assets/img/二维码/1.jpg" width="140px">
-            <img src="../assets/img/二维码/2.jpg" width="140px">
-            <img src="../assets/img/二维码/3.jpg" width="140px">
+            <img src="../assets/img/二维码/group.png" width="140px">
+            <img src="../assets/img/二维码/lyh.png" width="140px">
+            <img src="../assets/img/二维码/wxp.jpg" width="140px">
         </div>
     </div>
 
@@ -115,8 +115,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('../assets/img/aboutus/vegetables-pattern.png');
-    background-color: #058203;
+    background: url('../assets/img/aboutus/5.png');
+    background-color: #79dfd6;
 }
 
 </style>

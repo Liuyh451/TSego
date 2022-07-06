@@ -32,19 +32,7 @@ export default {
         return{
             forum:[],
             用户信息: {
-                // "id": 30,
-                // "username": "河马先生",
-                // "email": "12456789003@123.com",
-                // "phone": "18293635616",
-                // "avatar": "http://47.106.193.0:8080/upload/2021/07/23/c66d1d2172c740f2bfcf0d762348da03.png",
-                // "gender": "男",
-                // "age": 19,
-                // "foodPreference": "新鲜水果",
-                // "signature": "我爱吃！",
-                // "hometown": "甘肃省",
-                // "residentArea": "东南大学九龙湖校区",
-                // "label": "喜欢清淡食物",
-                // "createTime": "2021-07-02 12:05:24"
+                
             }
         } 
     },

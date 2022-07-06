@@ -6,392 +6,175 @@
         <div class="正文" style="zoom: 90%">
             <div id="展示区" >
                 <div id="走马灯展示区">
-                    <div id="左侧分类栏">
+                    <div id="左侧分类栏" >
                         <div id="分类栏头">全部商品分类</div>
-                        <div id="分类栏表">
+                        <div id="分类栏表" >
                             <ul>
                                 <li id="li1">
-                                    <img src="../assets/img/分类小图标/sprite_fresh1.png" width="30px" height="30px">
-                                    <a href="#" style="color:black">新鲜水果</a><i>></i>
+                                    <img src="../assets/img/分类小图标/cloth.png" width="30px" height="30px">
+                                    <a href="#" style="color:black">服饰箱包</a><i>></i>
                                     <div id="右侧拉出栏1">
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a  href="/goodslist?productname=水果">热销水果 ></a></div>
-                                            <!-- <a href="#"> 苹果 |</a>
-                                            <a href="#"> 葡萄 |</a>
-                                            <a href="#"> 提子 |</a>
-                                            <a href="#"> 奇异果 |</a>
-                                            <a href="#"> 猕猴桃 |</a>
-                                            <a href="#"> 橙子 |</a>
-                                            <a href="#"> 梨 |</a>
-                                            <a href="#"> 蓝莓 |</a>
-                                            <a href="#"> 柠檬 |</a>
-                                            <a href="#"> 百香果 |</a>
-                                            <a href="#"> 火龙果 |</a>
-                                            <a href="#"> 椰青 |</a>
-                                            <a href="#"> 西柚 </a> -->
+                                            <div id="小抬头"><a  href="/goodslist?productname=潮流女装">潮流女装 ></a></div>
+                 
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=时令水果">时令水果 ></a></div>
-                                            <!-- <a href="#"> 柚子 |</a>
-                                            <a href="#"> 冬枣 |</a>
-                                            <a href="#"> 车厘子 |</a>
-                                            <a href="#"> 奇异果 |</a>
-                                            <a href="#"> 樱桃 |</a>
-                                            <a href="#"> 水蜜桃 |</a>
-                                            <a href="#"> 杏 |</a>
-                                            <a href="#"> 李子 |</a>
-                                            <a href="#"> 香瓜 |</a>
-                                            <a href="#"> 哈密瓜 |</a>
-                                            <a href="#"> 西瓜 |</a>
-                                            <a href="#"> 枇杷 |</a>
-                                            <a href="#"> 杨梅 |</a>
-                                            <a href="#"> 草莓 |</a>
-                                            <a href="#"> 鲜槟榔 |</a>
-                                            <a href="#"> 金桔 |</a>
-                                            <a href="#"> 甘蔗 |</a>
-                                            <a href="#"> 柿子 |</a>
-                                            <a href="#"> 无花果 |</a>
-                                            <a href="#"> 石榴 |</a>
-                                            <a href="#"> 橘柑 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=时尚男装">时尚男装 ></a></div>
+                            
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=热带水果">热带鲜果 ></a></div>
-                                            <!-- <a href="#"> 芒果 |</a>
-                                            <a href="#"> 菠萝 |</a>
-                                            <a href="#"> 凤梨 |</a>
-                                            <a href="#"> 榴莲 |</a>
-                                            <a href="#"> 香蕉 |</a>
-                                            <a href="#"> 百香果 |</a>
-                                            <a href="#"> 山竹 |</a>
-                                            <a href="#"> 木瓜 |</a>
-                                            <a href="#"> 释迦 |</a>
-                                            <a href="#"> 龙眼 |</a>
-                                            <a href="#"> 牛油果 |</a>
-                                            <a href="#"> 菠萝蜜 |</a>
-                                            <a href="#"> 椰子 |</a>
-                                            <a href="#"> 火龙果  |</a>
-                                            <a href="#"> 莲雾 |</a>
-                                            <a href="#"> 番石榴 |</a>
-                                            <a href="#"> 芭乐 |</a>
-                                            <a href="#"> 龙宫果 |</a>
-                                            <a href="#"> 火参果 |</a>
-                                            <a href="#"> 杨桃 |</a>
-                                            <a href="#"> 红毛丹</a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=时尚女包">时尚女包 ></a></div>
+                                      
                                         </div>
                                     </div>
                                 </li>
                                 <li id="li2">
-                                    <img src="../assets/img/分类小图标/sprite_fresh2.png" width="30px" height="30px">
-                                    <a href="#" style="color:black">海鲜水产</a><i>></i>
+                                    <img src="../assets/img/分类小图标/digtial.png" width="30px" height="30px">
+                                    <a href="#" style="color:black">电子数码</a><i>></i>
                                     <div id="右侧拉出栏2">
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a  href="/goodslist?productname=鱼类">鱼类 ></a></div>
-                                           <!--  <a href="#"> 三文鱼 |</a>
-                                            <a href="#"> 鳕鱼 |</a>
-                                            <a href="#"> 提子 |</a>
-                                            <a href="#"> 带鱼 |</a>
-                                            <a href="#"> 黄鱼 |</a>
-                                            <a href="#"> 黄花鱼 |</a>
-                                            <a href="#"> 金枪鱼 |</a>
-                                            <a href="#"> 巴沙鱼 |</a>
-                                            <a href="#"> 鲳鱼 |</a>
-                                            <a href="#"> 鲈鱼 |</a>
-                                            <a href="#"> 鳗鱼 |</a>
-                                            <a href="#"> 鲽鱼 |</a>
-                                            <a href="#"> 胖头鱼 </a> -->
+                                            <div id="小抬头"><a  href="/goodslist?productname=手机">手机 ></a></div>
+                                     
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=虾类">虾类 ></a></div>
-                                            <!-- <a href="#"> 红虾 |</a>
-                                            <a href="#"> 白虾 |</a>
-                                            <a href="#"> 虾仁 |</a>
-                                            <a href="#"> 北极甜虾 |</a>
-                                            <a href="#"> 黑虎虾 |</a>
-                                            <a href="#"> 大龙虾 |</a>
-                                            <a href="#"> 小龙虾 |</a>
-                                            <a href="#"> 竹节虾 |</a>
-                                            <a href="#"> 皮皮虾 |</a>
-                                            <a href="#"> 基围虾 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=电脑">电脑 ></a></div>
+                                        
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=蟹类"> 蟹类 ></a></div>
-                                           <!--  <a href="#"> 大闸蟹 |</a>
-                                            <a href="#"> 帝王蟹 |</a>
-                                            <a href="#"> 梭子蟹 |</a>
-                                            <a href="#"> 面包蟹 |</a>
-                                            <a href="#"> 黄金蟹 |</a>
-                                            <a href="#"> 青蟹 |</a>
-                                            <a href="#"> 雪蟹 |</a>
-                                            <a href="#"> 珍宝蟹 |</a>
-                                            <a href="#"> 红毛蟹 |</a>
-                                            <a href="#"> 醉蟹 |</a>
-                                            <a href="#"> 香辣蟹 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=平板"> 平板 ></a></div>
+                                          
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=贝类"> 贝类 ></a></div>
-                                            <!-- <a href="#"> 生蚝 |</a>
-                                            <a href="#"> 鲍鱼 |</a>
-                                            <a href="#"> 扇贝 |</a>
-                                            <a href="#"> 蛤 |</a>
-                                            <a href="#"> 蚬子 |</a>
-                                            <a href="#"> 螺 |</a>
-                                            <a href="#"> 蛏子 |</a>
-                                            <a href="#"> 北极贝 |</a>
-                                            <a href="#"> 蚌 |</a>
-                                            <a href="#"> 贝柱 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=相机"> 相机 ></a></div>
+                                            
                                         </div>
                                     </div>
                                 </li>
                                 <li id="li3">
-                                    <img src="../assets/img/分类小图标/sprite_fresh3.png" width="30px" height="30px">
-                                    <a href="#" style="color:black">精选肉类</a><i>></i>
+                                    <img src="../assets/img/分类小图标/Cosmetics.png" width="30px" height="30px">
+                                    <a href="#" style="color:black">护肤彩妆</a><i>></i>
                                     <div id="右侧拉出栏3">
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a  href="/goodslist?productname=猪肉">猪肉 ></a></div>
-                                            <!-- <a href="#"> 肋排 |</a>
-                                            <a href="#"> 猪蹄 |</a>
-                                            <a href="#"> 提子 |</a>
-                                            <a href="#"> 五花肉 |</a>
-                                            <a href="#"> 汤骨 |</a>
-                                            <a href="#"> 棒骨 |</a>
-                                            <a href="#"> 猪肘 |</a>
-                                            <a href="#"> 梅花肉片 |</a>
-                                            <a href="#"> 猪排 |</a>
-                                            <a href="#"> 猪扒 |</a>
-                                            <a href="#"> 里脊 |</a>
-                                            <a href="#"> 猪肉馅 |</a>
-                                            <a href="#"> 脊骨 </a> -->
+                                            <div id="小抬头"><a  href="/goodslist?productname=美容护肤">美容护肤 ></a></div>
+                                            
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=牛肉">牛肉 ></a></div>
-                                           <!--  <a href="#"> 牛排 |</a>
-                                            <a href="#"> 牛腩 |</a>
-                                            <a href="#"> 牛腱子 |</a>
-                                            <a href="#"> 牛里脊 |</a>
-                                            <a href="#"> 牛肉片 |</a>
-                                            <a href="#"> 卷牛尾 |</a>
-                                            <a href="#"> 牛肋条 |</a>
-                                            <a href="#"> 牛蹄筋 |</a>
-                                            <a href="#"> 牛肉串 |</a>
-                                            <a href="#"> 牛骨 |</a>
-                                            <a href="#"> 筋头巴脑 |</a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=香氛精油">香氛精油 ></a></div>
+                                           
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=羊肉">羊肉 ></a></div>
-                                            <!-- <a href="#"> 羊肋排 |</a>
-                                            <a href="#"> 羊肉片 |</a>
-                                            <a href="#"> 卷羊腿 |</a>
-                                            <a href="#"> 羊蝎子 |</a>
-                                            <a href="#"> 羊肉串 |</a>
-                                            <a href="#"> 羊肉块 |</a>
-                                            <a href="#"> 整羊 |</a>
-                                            <a href="#"> 羊杂 |</a>
-                                            <a href="#"> 西式羊排 |</a>
-                                            <a href="#"> 羊肉馅 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=眼部彩妆">眼部彩妆 ></a></div>
+                                          
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=鸡肉">鸡肉 ></a></div>
-                                          <!--   <a href="#"> 鸡翅 |</a>
-                                            <a href="#"> 整鸡 |</a>
-                                            <a href="#"> 鸡胸肉 |</a>
-                                            <a href="#"> 鸡腿 |</a>
-                                            <a href="#"> 鸡爪 |</a>
-                                            <a href="#"> 鸡肉块 |</a>
-                                            <a href="#"> 鸡胗 |</a>
-                                            <a href="#"> 鸡肫 |</a>
-                                            <a href="#"> 鸡柳 |</a>
-                                            <a href="#"> 鸡排 |</a>
-                                            <a href="#"> 柴鸡 |</a>
-                                            <a href="#"> 老母鸡 |</a>
-                                            <a href="#"> 大公鸡 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=美发造型">美发造型 ></a></div>
+                                      
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=鸭肉">鸭肉 ></a></div>
-                                           <!--  <a href="#"> 鸭腿 |</a>
-                                            <a href="#"> 鸭胸 |</a>
-                                            <a href="#"> 鸭肫 |</a>
-                                            <a href="#"> 鸭胗 |</a>
-                                            <a href="#"> 鸭掌 |</a>
-                                            <a href="#"> 鸭脖 |</a>
-                                            <a href="#"> 鸭舌 |</a>
-                                            <a href="#"> 鸭翅 |</a>
-                                            <a href="#"> 老鸭 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=换季保养">换季保养 ></a></div>
+                                         
                                         </div>
                                     </div>
                                 </li>
                                 <li id="li4">
-                                    <img src="../assets/img/分类小图标/sprite_fresh4.png" width="30px" height="30px">
-                                    <a href="#" style="color:black">冷饮冻食</a><i>></i>
+                                    <img src="../assets/img/分类小图标/Goods.png" width="30px" height="30px">
+                                    <a href="#" style="color:black">百货市场</a><i>></i>
                                     <div id="右侧拉出栏4">
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a  href="/goodslist?productname=面点">面点 ></a></div>
-                                          <!--   <a href="#"> 手抓饼 |</a>
-                                            <a href="#"> 水饺 |</a>
-                                            <a href="#"> 云吞 |</a>
-                                            <a href="#"> 汤圆 |</a>
-                                            <a href="#"> 元宵 |</a>
-                                            <a href="#"> 包子 |</a>
-                                            <a href="#"> 馒头 |</a>
-                                            <a href="#"> 面条 |</a>
-                                            <a href="#"> 年糕 |</a>
-                                            <a href="#"> 月饼 |</a>
-                                            <a href="#"> 烧麦 |</a>
-                                            <a href="#"> 肠粉 </a> -->
+                                            <div id="小抬头"><a  href="/goodslist?productname=居家日用">居家日用 ></a></div>
+                                         
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=方便速食">方便速食 ></a></div>
-                                          <!--   <a href="#"> 方便菜 |</a>
-                                            <a href="#"> 方便面 |</a>
-                                            <a href="#"> 方便米饭 |</a>
-                                            <a href="#"> 培根 |</a>
-                                            <a href="#"> 火腿 |</a>
-                                            <a href="#"> 薯条 |</a>
-                                            <a href="#"> 鸡米花 |</a>
-                                            <a href="#"> 鸡肉块 |</a>
-                                            <a href="#"> 鸡柳 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=应季百货">应季百货 ></a></div>
+                                          
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=火锅丸料"> 火锅丸料 ></a></div>
-                                            <!-- <a href="#"> 牛肉丸 |</a>
-                                            <a href="#"> 鱼豆腐 |</a>
-                                            <a href="#"> 鱼丸 |</a>
-                                            <a href="#"> 火锅肠 |</a>
-                                            <a href="#"> 墨鱼丸 |</a>
-                                            <a href="#"> 火锅饺 |</a>
-                                            <a href="#"> 包心丸 |</a>
-                                            <a href="#"> 火锅料 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=厨房工具"> 厨房工具 ></a></div>
+                                           
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=烘焙食材"> 烘焙食材 ></a></div>
-                                            <!-- <a href="#"> 奶酪 |</a>
-                                            <a href="#"> 黄油 |</a>
-                                            <a href="#"> 芝士 |</a>
-                                            <a href="#"> 淡奶油 |</a>
-                                            <a href="#"> 蛋挞 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=清洁工具"> 清洁工具 ></a></div>
+                                            
                                         </div>
                                     </div>
                                 </li>
                                 <li id="li5">
-                                    <img src="../assets/img/分类小图标/sprite_fresh5.png" width="30px" height="30px">
-                                    <a href="#" style="color:black">蔬菜蛋品</a><i>></i>
+                                    <img src="../assets/img/分类小图标/food.png" width="30px" height="30px">
+                                    <a href="#" style="color:black">汇吃美食</a><i>></i>
                                     <div id="右侧拉出栏5">
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a  href="/goodslist?productname=叶菜类">叶菜类 ></a></div>
-                                           <!--  <a href="#"> 生菜 |</a>
-                                            <a href="#"> 菜心 |</a>
-                                            <a href="#"> 西兰花 |</a>
-                                            <a href="#"> 菠菜 |</a>
-                                            <a href="#"> 上海青 |</a>
-                                            <a href="#"> 油菜 |</a>
-                                            <a href="#"> 芥蓝 |</a>
-                                            <a href="#"> 白菜 |</a>
-                                            <a href="#"> 甘蓝 |</a>
-                                            <a href="#"> 卷心菜 |</a>
-                                            <a href="#"> 芹菜 |</a>
-                                            <a href="#"> 韭菜 |</a>
-                                            <a href="#"> 茼蒿 |</a>
-                                            <a href="#"> 香菜 |</a>
-                                            <a href="#"> 茴香 |</a>
-                                            <a href="#"> 芝麻菜 </a> -->
+                                            <div id="小抬头"><a  href="/goodslist?productname=休闲零食">休闲零食 ></a></div>
+                                           
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=根茎类">根茎类 ></a></div>
-                                            <!-- <a href="#"> 山药 |</a>
-                                            <a href="#"> 萝卜 |</a>
-                                            <a href="#"> 地瓜 |</a>
-                                            <a href="#"> 莲藕 |</a>
-                                            <a href="#"> 土豆 |</a>
-                                            <a href="#"> 芋头 |</a>
-                                            <a href="#"> 百合 |</a>
-                                            <a href="#"> 芦笋 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=生鲜果蔬"> 生鲜果蔬></a></div>
+                                           
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=菌菇"> 鲜菌菇 ></a></div>
-                                           <!--  <a href="#"> 香菇 |</a>
-                                            <a href="#"> 松茸 |</a>
-                                            <a href="#"> 鸡枞菌 |</a>
-                                            <a href="#"> 牛肝菌 |</a>
-                                            <a href="#"> 杏鲍菇 |</a>
-                                            <a href="#"> 木耳 |</a>
-                                            <a href="#"> 银耳 |</a>
-                                            <a href="#"> 黑松露菌 |</a>
-                                            <a href="#"> 平菇 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=牛奶饮料"> 牛奶饮料 ></a></div>
+                                          
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=茄果瓜类"> 茄果瓜类 ></a></div>
-                                           <!--  <a href="#"> 玉米 |</a>
-                                            <a href="#"> 黄瓜 |</a>
-                                            <a href="#"> 西红柿 |</a>
-                                            <a href="#"> 南瓜 |</a>
-                                            <a href="#"> 茄子 |</a>
-                                            <a href="#"> 四季豆 |</a>
-                                            <a href="#"> 苦瓜 |</a>
-                                            <a href="#"> 豇豆 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=水产鲜肉"> 水产鲜肉 ></a></div>
+                                         
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=葱姜蒜椒">葱姜蒜椒 ></a></div>
-                                            <!-- <a href="#"> 葱 |</a>
-                                            <a href="#"> 姜 |</a>
-                                            <a href="#"> 大蒜 |</a>
-                                            <a href="#"> 花椒 |</a>
-                                            <a href="#"> 红辣椒 |</a>
-                                            <a href="#"> 青椒 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=美酒佳酿">美酒佳酿 ></a></div>
+                                            
                                         </div>
                                         <div id="右拉菜单">
-                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=半加工">半加工菜 ></a></div>
-                                           <!--  <a href="#"> 泡菜 |</a>
-                                            <a href="#"> 沙拉菜 |</a>
-                                            <a href="#"> 酸菜 </a> -->
+                                            <div id="小抬头"><a id="小抬头" href="/goodslist?productname=滋补养生">滋补养生 ></a></div>
+                                         
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div id="插图1"><img src="../assets/img/fruits-plate.png" width="250px"></div>
+                        
                     </div>
                     <div id="中部走马灯">
-                            <el-carousel height="400px">
+                            <el-carousel height="350px">
                             <el-carousel-item v-for="item in pictures" :key="item">
                                 <h3 class="small"><img :src=item></h3>
                             </el-carousel-item>
                             </el-carousel>
                     </div>
-                    <div id="右侧头条广告">
+                    <div id="右侧头条广告" style="height:345px">
                         <div id="右侧头条">
-                            <div id="头条标题"><h3 align="center">—河马头条—</h3></div>
+                            <div id="头条标题"><h3 align="center">—天生头条—</h3></div>
                             <div id="头条内容">
                                 <p align="center"><a href="https://top100.jd.com/">精挑细选100分营养美味</a></p>
                                 <p align="center"><a href="https://top100.jd.com/">0元试吃 全新上线 抓紧尝鲜</a></p>
-                                <p align="center"><a href="https://top100.jd.com/">一顿立享 抓紧做顿好饭</a></p>
+                                <p align="center"><a href="https://top100.jd.com/">挡不住的美味</a></p>
                             </div>
                         </div>
                         <div id="右侧广告">
-                            <img src="https://m.360buyimg.com/babel/jfs/t1/196248/22/12553/67690/60ebacecEd9f907d2/f3993b3e216c7676.png" width="242x">
+                            <img src="../assets/img/roll/16.jpg" width="200px" height="210px">
                         </div>
                     </div>
                 </div>
                 <div id="展示区下侧">
                     <div id="下侧展示块">
                         <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                        <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                        <div id="展示块文字"><p id="展示块文字上">天生精选</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
                     </div>
                     <div id="下侧展示块">
                         <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                        <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                        <div id="展示块文字"><p id="展示块文字上">天生精选</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
                     </div>
                     <div id="下侧展示块">
                         <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                        <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                        <div id="展示块文字"><p id="展示块文字上">天生精选</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
                     </div>
                     <div id="下侧展示块">
                         <div id="展示块图片"><img src="../assets/img/white/leafs-transparent.png" width="90px"></div>
-                        <div id="展示块文字"><p id="展示块文字上">鲜活天然</p><p id="展示块文字下">绿色生态 河马精选</p></div>
+                        <div id="展示块文字"><p id="展示块文字上">天生精选</p><p id="展示块文字下">Everything Can Do Sometimes</p></div>
                     </div>
                 </div>
             </div>
             <div id="秒杀区">
                 <div id="标题栏">
-                    <p style="font-size:30px"> 河 / 马 / 秒 / 杀 </p>
+                    <p style="font-size:30px"> 天 / 生 / 秒 / 杀 </p>
                     <p>FLASH SALE</p>
                 </div>
                 <div id="秒杀区商品容器">
@@ -431,22 +214,21 @@
             </div>
             <div id="推荐区">
                 <div id="标题栏">
-                    <p style="font-size:30px"> 身 / 临 / 食 / 感 </p>
+                    <p style="font-size:30px"> 精 / 品 / 推 / 荐 </p>
                     <p>INSPIRATION FRESH</p>
                 </div>
                 <div id="推荐区导航">
                     <el-tabs id="推荐区导航栏" v-model="activeName" @tab-click="handleClick">
-                        <el-tab-pane id ="推荐区块" label="精选礼盒" name="first">
+                        <el-tab-pane id ="推荐区块" label="精选数码" name="first">
                             <div id="推荐区文字">
-                                <p style="font-size:25px">精选礼盒</p>
-                                <p>送礼送健康，精选生鲜礼盒</p>
+                                <p style="font-size:25px">精选数码</p>
                             </div>
                             <div id="推荐商品区块">
                                 <div id="推荐商品区">
                                     <div id="单个商品块" v-for="o, index in products2" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products2[index].id)">
-                                                <img :src="products2[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products2[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -465,19 +247,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <img id ="插图2" src="https://img14.360buyimg.com/cms/jfs/t7465/58/1681827025/166530/5a524b9e/599e7853N7bbe1ce0.png" alt=''>
+                            <img id ="插图2" src="../assets/img/roll/r1.png" alt=''>
                         </el-tab-pane>
-                        <el-tab-pane id ="推荐区块" label="火锅诱惑" name="second">
+                        <el-tab-pane id ="推荐区块" label="潮流腕表" name="second">
                             <div id="推荐区文字">
-                                <p style="font-size:25px">火锅诱惑</p>
-                                <p>送礼送健康，精选生鲜礼盒</p>
+                                <p style="font-size:25px">潮流腕表</p>
                             </div>
                             <div id="推荐商品区块">
                                 <div id="推荐商品区" >
                                     <div id="单个商品块" v-for="o, index in products1" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products1[index].id)">
-                                                <img :src="products1[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products1[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -498,19 +279,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <img id ="插图2" src="https://img12.360buyimg.com/cms/jfs/t7537/125/1647183785/185951/b5235b8b/599e781dN93a73aad.png" alt=''>
+                            <img id ="插图2" src="../assets/img/roll/r2.png" alt=''>
                         </el-tab-pane>
-                        <el-tab-pane id ="推荐区块" label="深夜食堂" name="third">
+                        <el-tab-pane id ="推荐区块" label="时尚美妆" name="third">
                             <div id="推荐区文字">
-                                <p style="font-size:25px">深夜食堂</p>
-                                <p>送礼送健康，精选生鲜礼盒</p>
+                                <p style="font-size:25px">时尚美妆</p>
+                                
                             </div>
                             <div id="推荐商品区块">
                                 <div id="推荐商品区">
                                     <div id="单个商品块" v-for="o, index in products3" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products3[index].id)">
-                                                <img :src="products3[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products3[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -531,19 +312,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <img id ="插图2" src="https://img12.360buyimg.com/cms/jfs/t7501/309/1654880459/149132/f98a2726/599e7890Nb5117daa.png" alt=''>
+                            <img id ="插图2" src="../assets/img/roll/r3.png" alt=''>
                         </el-tab-pane>
-                        <el-tab-pane id ="推荐区块" label="进口美食" name="fourth">
+                        <el-tab-pane id ="推荐区块" label="精品服饰" name="fourth">
                             <div id="推荐区文字">
-                                <p style="font-size:25px">进口美食</p>
-                                <p>送礼送健康，精选生鲜礼盒</p>
+                                <p style="font-size:25px">精品服饰</p>
                             </div>
                             <div id="推荐商品区块">
                                 <div id="推荐商品区">
                                     <div id="单个商品块" v-for="o, index in products4" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products4[index].id)">
-                                                <img :src="products4[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products4[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -564,7 +344,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img id ="插图2" src="https://img10.360buyimg.com/cms/jfs/t13846/115/2346218030/176079/dfd8ece7/5a4094d3Nc8168196.png" alt=''>
+                            <img id ="插图2" src="../assets/img/roll/r4.png" alt=''>
                         </el-tab-pane>
                     </el-tabs>
                 </div>
@@ -572,25 +352,26 @@
             </div>
             <div id="分类展示区">
                 <div id="标题栏">
-                    <p style="font-size:30px"> 河 / 马 / 生 / 鲜 </p>
-                    <p>HIPPO FRESH</p>
+                    <p style="font-size:30px"> 天 / 生 / 易 / 购 </p>
+                    <p>Intrinsic Shopping
+</p>
                 </div>
                 <div id="新鲜水果展区">
                     <div id="展示模块">
                         <div id="展示模块上部">
                             <div id="展示模块上部块1">
-                                <div id="标题"><h4 style="color:white; margin-block-end: 8px">新鲜水果</h4></div>
-                                <div id="简述">应时而采，新鲜特供</div>
+                                <div id="标题"><h4 style="color:white; margin-block-end: 8px">服饰箱包</h4></div>
+                                <div id="简述">时尚易逝，风格永存</div>
                                 <div id="选项">
-                                    <div id="装字盒"><a href="#"> 车厘子 </a></div>
-                                    <div id="装字盒"><a href="#"> 猕猴桃 </a></div>
-                                    <div id="装字盒"><a href="#"> 进口水果 </a></div>
-                                    <div id="装字盒"><a href="#"> 芒果 </a></div>
-                                    <div id="装字盒"><a href="#"> 苹果 </a></div>
-                                    <div id="装字盒"><a href="#"> 橙子 </a></div>
+                                    <div id="装字盒"><a href="#"> 女装 </a></div>
+                                    <div id="装字盒"><a href="#"> 男装 </a></div>
+                                    <div id="装字盒"><a href="#"> 童装 </a></div>
+                                    <div id="装字盒"><a href="#"> 箱包 </a></div>
+                                    <div id="装字盒"><a href="#"> 内衣 </a></div>
+                              
                                 </div>
                                 <div id="更多">
-                                    <div id="装字盒"><a href="#"> 更多水果  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
+                                    <div id="装字盒"><a href="#"> 更多服饰  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
                                 </div>
                             </div>
                             <div id="展示模块上部块2"></div>
@@ -598,10 +379,10 @@
                         </div>
                         <div id="展示模块下部">
                             <div id="展示模块下部块">
-                                    <div id="单个商品块" v-for="o, index in products5" :key="index">
+                                    <div id="单个商品块" v-for="o, index in 6" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products5[index].id)">
-                                                <img :src="products5[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products5[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -628,18 +409,18 @@
                     <div id="展示模块">
                         <div id="展示模块上部">
                             <div id="展示模块上部块1">
-                                <div id="标题"><h4 style="color:white; margin-block-end: 8px">海鲜水产</h4></div>
-                                <div id="简述">新鲜海货，即时享受</div>
+                                <div id="标题"><h4 style="color:white; margin-block-end: 8px">电子数码</h4></div>
+                                <div id="简述">超越自我，非同凡响</div>
                                 <div id="选项">
-                                    <div id="装字盒"><a href="#"> 海鲜礼盒 </a></div>
-                                    <div id="装字盒"><a href="#"> 虾类 </a></div>
-                                    <div id="装字盒"><a href="#"> 软足类 </a></div>
-                                    <div id="装字盒"><a href="#"> 活鲜 </a></div>
-                                    <div id="装字盒"><a href="#"> 海参 </a></div>
-                                    <div id="装字盒"><a href="#"> 扇贝 </a></div>
+                                    <div id="装字盒"><a href="#"> 笔记本 </a></div>
+                                    <div id="装字盒"><a href="#"> 手机 </a></div>
+                                    <div id="装字盒"><a href="#"> 平板 </a></div>
+                                    <div id="装字盒"><a href="#"> 显示器 </a></div>
+                                    <div id="装字盒"><a href="#"> 相机 </a></div>
+                                    <div id="装字盒"><a href="#"> 键鼠 </a></div>
                                 </div>
                                 <div id="更多">
-                                    <div id="装字盒"><a href="#"> 更多海鲜  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
+                                    <div id="装字盒"><a href="#"> 更多数码  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
                                 </div>
                             </div>
                             <div id="展示模块上部块2"></div>
@@ -650,7 +431,7 @@
                                 <div id="单个商品块" v-for="o, index in products6" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products6[index].id)">
-                                                <img :src="products6[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products6[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -677,18 +458,18 @@
                     <div id="展示模块">
                         <div id="展示模块上部">
                             <div id="展示模块上部块1">
-                                <div id="标题"><h4 style="color:white; margin-block-end: 8px">精选肉类</h4></div>
-                                <div id="简述">肉香四溢，大快朵颐</div>
+                                <div id="标题"><h4 style="color:white; margin-block-end: 8px">护肤彩妆</h4></div>
+                                <div id="简述">至纯至净，御美有方</div>
                                 <div id="选项">
-                                    <div id="装字盒"><a href="#"> 猪肉 </a></div>
-                                    <div id="装字盒"><a href="#"> 羊肉 </a></div>
-                                    <div id="装字盒"><a href="#"> 牛肉 </a></div>
-                                    <div id="装字盒"><a href="#"> 牛排 </a></div>
-                                    <div id="装字盒"><a href="#"> 鸡翅 </a></div>
-                                    <div id="装字盒"><a href="#"> 冷鲜肉 </a></div>
+                                    <div id="装字盒"><a href="#"> 唇膏 </a></div>
+                                    <div id="装字盒"><a href="#"> 口红 </a></div>
+                                    <div id="装字盒"><a href="#"> 香水 </a></div>
+                                    <div id="装字盒"><a href="#"> 面膜 </a></div>
+                                    <div id="装字盒"><a href="#"> 底妆 </a></div>
+                                    <div id="装字盒"><a href="#"> 眉眼 </a></div>
                                 </div>
                                 <div id="更多">
-                                    <div id="装字盒"><a href="#"> 更多肉类  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
+                                    <div id="装字盒"><a href="#"> 更多美妆  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
                                 </div>
                             </div>
                             <div id="展示模块上部块2"></div>
@@ -699,7 +480,7 @@
                                 <div id="单个商品块" v-for="o, index in products7" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products7[index].id)">
-                                                <img :src="products7[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products7[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -727,18 +508,18 @@
                         <div id="展示模块2">
                             <div id="展示模块2上部">
                                 <div id="展示模块2上部块1">
-                                    <div id="标题"><h4 style="color:white; margin-block-end: 8px">冷冻饮品</h4></div>
-                                    <div id="简述">速冻美味，乐享生活</div>
+                                    <div id="标题"><h4 style="color:white; margin-block-end: 8px">汇吃美食</h4></div>
+                                    <div id="简述">乐享美味，乐享生活</div>
                                     <div id="选项">
-                                        <div id="装字盒"><a href="#"> 水饺 </a></div>
-                                        <div id="装字盒"><a href="#"> 方便面 </a></div>
+                                        <div id="装字盒"><a href="#"> 牛奶 </a></div>
+                                        <div id="装字盒"><a href="#"> 巧克力</a></div>
                                         <div id="装字盒"><a href="#"> 酸奶 </a></div>
                                         <div id="装字盒"><a href="#"> 蛋糕 </a></div>
                                         <div id="装字盒"><a href="#"> 冰淇淋 </a></div>
-                                        <div id="装字盒"><a href="#"> 手抓饼 </a></div>
+                                        <div id="装字盒"><a href="#"> 坚果 </a></div>
                                     </div>
                                     <div id="更多">
-                                        <div id="装字盒"><a href="#"> 更多冷冻食品   > </a></div>
+                                        <div id="装字盒"><a href="#"> 更多美食   > </a></div>
                                     </div>
                                 </div>
                                 <div id="展示模块2上部块2"></div>
@@ -748,7 +529,7 @@
                                     <div id="单个商品块" v-for="o, index in products8" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products8[index].id)">
-                                                <img :src="products8[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products8[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -775,18 +556,18 @@
                         <div id="展示模块2">
                             <div id="展示模块2上部">
                                 <div id="展示模块2上部块1">
-                                    <div id="标题"><h4 style="color:white; margin-block-end: 8px">新鲜蔬菜</h4></div>
-                                    <div id="简述">来自田间，清香犹存</div>
+                                    <div id="标题"><h4 style="color:white; margin-block-end: 8px">百货市场</h4></div>
+                                    <div id="简述">舒适在身，优雅在心</div>
                                     <div id="选项">
-                                        <div id="装字盒"><a href="#"> 青菜 </a></div>
-                                        <div id="装字盒"><a href="#"> 地瓜 </a></div>
-                                        <div id="装字盒"><a href="#"> 玉米 </a></div>
-                                        <div id="装字盒"><a href="#"> 山药 </a></div>
-                                        <div id="装字盒"><a href="#"> 南瓜 </a></div>
-                                        <div id="装字盒"><a href="#"> 红薯 </a></div>
+                                        <div id="装字盒"><a href="#"> 沙发 </a></div>
+                                        <div id="装字盒"><a href="#"> 茶几 </a></div>
+                                        <div id="装字盒"><a href="#"> 书桌 </a></div>
+                                        <div id="装字盒"><a href="#"> 炒锅 </a></div>
+                                        <div id="装字盒"><a href="#"> 刀具 </a></div>
+                                        <div id="装字盒"><a href="#"> 杯具</a></div>
                                     </div>
                                     <div id="更多">
-                                        <div id="装字盒"><a href="#"> 更多蔬菜   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
+                                        <div id="装字盒"><a href="#"> 更多百货   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  > </a></div>
                                     </div>
                                 </div>
                                 <div id="展示模块2上部块2"></div>
@@ -796,7 +577,7 @@
                                     <div id="单个商品块" v-for="o, index in products9" :key="index">
                                         <div id="单个商品图片">
                                             <a href="javascript:void(0);" @click="toshop(products9[index].id)">
-                                                <img :src="products9[index].pictureUrl"  width="150px" height="150px">
+                                                <img :src="products9[index].pictureurl"  width="150px" height="150px">
                                             </a>
                                         </div>
                                         <div id="单个商品名称">
@@ -848,20 +629,24 @@
 
 <script>
 const axios = require('axios');
-/* import App from '../App.vue' */
+/*  import App from '../App.vue'  */
 import Navbar from './Navbar.vue'
 import Header from './Header.vue'
 import Bottom from './Bottom.vue'
+import api from "../api"
 export default {
+    
   components: {
     Navbar,
     Header,
     Bottom
   },
+  
   created () {
-      if (localStorage.hasOwnProperty('currentuser')){
+    /* 这个是用来获取用户通知的 */
+      /* if (localStorage.hasOwnProperty('currentuser')){
             axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-            axios.post('http://47.106.193.0:8080/api/user/message/find', {
+            axios.post('http://localhost:9090/user/product/search', {
             }).then(res => {
                 console.log(res.data)
             if (res.data.code === 200) {
@@ -881,67 +666,62 @@ export default {
                 this.discountdialogVisible = true
             }
         })
-      }
-    axios.post('http://47.106.193.0:8080/api/product/kill', {
+      } */
+/*     axios.post('http://localhost:9090/user/product/search', {
     }).then(res => {
       this.discountproduct = res.data.data
-    })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 4,
-      categoryFirst: '精选肉类'
+    }) */
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '潮流腕表'
     }).then(res => {
       this.products1 = res.data.data
       console.log(this.products1)
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 4,
-      categoryFirst: '新鲜水果'
+   axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '电子数码'
     }).then(res => {
       this.products2 = res.data.data
+      console.log(this.products2)
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 4,
-      categoryFirst: '冷冻即食'
+    axios.post('http://localhost:9090/product/search', {
+      
+      categoryFirst: '时尚美妆'
     }).then(res => {
       this.products3 = res.data.data
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 4,
-      categoryFirst: '海鲜水产'
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '精品服饰'
     }).then(res => {
       this.products4 = res.data.data
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 6,
-      categoryFirst: '新鲜水果'
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '服饰箱包'
     }).then(res => {
       this.products5 = res.data.data
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 6,
-      categoryFirst: '海鲜水产'
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '电子数码'
     }).then(res => {
       this.products6 = res.data.data
+      console.log(this.products6)
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 6,
-      categoryFirst: '精选肉类'
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '护肤彩妆'
     }).then(res => {
       this.products7 = res.data.data
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 3,
-      categoryFirst: '冷冻即食'
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '汇吃美食'
     }).then(res => {
       this.products8 = res.data.data
+      this.products8.length=this.products8.length-3
     })
-    axios.post('http://47.106.193.0:8080/api/product', {
-      pageNum: 3,
-      categoryFirst: '蔬菜蛋品'
+    axios.post('http://localhost:9090/product/search', {
+      categoryFirst: '百货市场'
     }).then(res => {
       this.products9 = res.data.data
+      this.products9.length=this.products9.length-3
     })
-
 
   },
   data () {
@@ -964,11 +744,11 @@ export default {
       input: '',
       img_url1: 'https://img10.360buyimg.com/cms/jfs/t13846/115/2346218030/176079/dfd8ece7/5a4094d3Nc8168196.png',
       activeName: 'second',
-      pictures: ['https://m.360buyimg.com/babel/jfs/t1/182746/10/13219/467054/60e6e0b1E0faed2cf/3bdf1461fc7264cf.jpg!q80',
-        'https://m.360buyimg.com/babel/jfs/t1/14084/5/16904/144270/60e29c48E65f43da8/72b7d0a3f7d4a13c.png',
+      pictures: ['https://image2.suning.cn/uimg/cms/img/164793059763145875.jpg',
+        'https://image5.suning.cn/uimg/cms/img/165571600935855163.jpg',
         // 'https://m.360buyimg.com/babel/jfs/t1/196359/2/12777/133729/60ec0f3cE49b3aa40/28b3a539daad2631.jpg',
-        'https://m.360buyimg.com/babel/jfs/t1/175866/8/18943/106123/60e7efbeEfcc022c8/3ef92520090e99e5.jpg',
-        'https://m.360buyimg.com/babel/jfs/t1/70483/25/16840/139216/60eeb266E2f4c8dd6/122d7b2d659945b6.jpg'],
+        'https://oss.suning.com/adpp/creative_kit/material/picture/20210706-3f7d954e7b59420ba820f5e0c025e6475c55bb4af86040a7.jpg',
+        'https://oss.suning.com/adpp/creative_kit/material/picture/20220321-d34cb9bcf1e84e0dab4a24d27297bc36f37dc8ff951445eb.jpg'],
       products1: [],
       products2: [],
       products3: [],
@@ -1019,7 +799,7 @@ export default {
     toshop (id) {
       this.$router.push({ path: '/singleproduct', query: { id: id } })
     }
-  }
+  },
 }
 </script>
 
@@ -1035,18 +815,19 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      color: white;
+      color: rgb(0, 0, 0);
       z-index: 2;
   }
   #秒杀区{
-      background: url('https://static.360buyimg.com/mtd/pc/fresh_v3/1.0.0/home/images/fresh_unique_bg.jpg');
+      background: url('../assets/img/roll/back5.jpg');
       background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
+
   }
   #秒杀区商品容器{
-      background: url('https://static.360buyimg.com/mtd/pc/fresh_v3/1.0.0/home/images/fresh_unique_top100_bg.jpg');
+      background: url('../assets/img/roll/back2.jpg');
       width: 1200px;
       height: 400px;
       display: flex;
@@ -1111,7 +892,7 @@ a:link{
 
 #展示区
 {
-    background: url('https://img11.360buyimg.com/cms/jfs/t9016/320/246907648/570978/346ecda1/59a3d65eNd604759b.png') ;
+    background: url('../assets/img/roll/6.jpg') ;
     background-color: #f0f0f7;
     height: 600px;
     background-position:center center;
@@ -1138,11 +919,12 @@ a{
 }
 #左侧分类栏{
     width: 200px;
+    height:350px;
     background-color: rgb(247, 245, 242);
     position: relative;
 }
 #li1, #li2, #li3, #li4, #li5{
-    height: 55px;
+    height: 60px;
     line-height: 50px;
     width: 92.5%;
    /*  text-align: center; */
@@ -1287,7 +1069,7 @@ a{
       height: 396px;
       background-color: white;
       border-color: white;
-      border-top-color: #57b25b ;
+      border-top-color: #000000 ;
       border-top-width: 3px;
       border-style: solid;
   }
@@ -1355,7 +1137,7 @@ a{
       margin-bottom: 0px;
   }
   #展示块文字下{
-    color: #b5b4b6;
+    color: #232323;
     font-size: 15px;
     margin-top: 0px;
   }
@@ -1377,10 +1159,10 @@ a{
 
   /*推荐区样式*/
   #推荐区{
-      background: url('https://static.360buyimg.com/mtd/pc/fresh_v3/1.0.0/home/images/fresh_slim_body_bg.png') ;
+      background: url('../assets/img/roll/plat.jpg') ;
       height: 800px;
       background-repeat: no-repeat;
-      background-size: 1200px, 325px;
+      background-size: 2000px, 325px;
       background-position:50% 57% ;
   }
   #推荐区 #标题栏{
@@ -1590,10 +1372,10 @@ a{
     background: url('https://img11.360buyimg.com/cms/jfs/t6868/56/1584301821/12315/9fe217a6/5982d8c6N279ff1cf.png');
 }
 #新鲜水果展区 #展示模块上部块2{
-    background: url('https://m.360buyimg.com/babel/jfs/t1/182866/39/12765/118834/60e272d6Eb4edc8a4/31c588f19a67ee72.jpg');
+    background: url('../assets/img/roll/8.png');
 }
 #新鲜水果展区 #展示模块上部块3{
-    background: url('https://m.360buyimg.com/babel/jfs/t1/181275/23/12244/115702/60dd9f28Ef918a957/84367afca68de929.png');
+    background: url('../assets/img/roll/9.jpg');
 }
 #新鲜水果展区, #海鲜水产展区, #精选肉类展区, #冷冻饮品展区, #新鲜蔬菜展区, #饮品和蔬菜{
     display: flex;
@@ -1609,19 +1391,19 @@ a{
     background: url('https://img11.360buyimg.com/cms/jfs/t6811/139/2080819948/8091/eca88413/59886313N1622b0f9.png');
 }
 #海鲜水产展区 #展示模块上部块2{
-    background: url('https://m.360buyimg.com/babel/jfs/t1/182595/39/13051/51906/60e57325E444f9604/f595376916cdb3f5.jpg');
+    background: url('../assets/img/roll/11.png');
 }
 #海鲜水产展区 #展示模块上部块3{
-    background: url('https://m.360buyimg.com/babel/jfs/t1/175620/29/18537/87097/60e53d05Ef6d7cc4d/9c08f9f947f47ce5.png');
+    background: url('../assets/img/roll/12.png');
 }
 #精选肉类展区 #展示模块上部块1{
     background: url('https://img11.360buyimg.com/cms/jfs/t7129/338/1166404786/8830/81357242/59886595Nc9fc959b.png');
 }
 #精选肉类展区 #展示模块上部块2{
-    background: url('https://m.360buyimg.com/babel/jfs/t1/172283/25/17504/26971/60dd4d8aE104aa022/200d6f292c9e8bc3.jpg');
+    background: url('../assets/img/roll/13.png');
 }
 #精选肉类展区 #展示模块上部块3{
-    background: url('https://m.360buyimg.com/babel/jfs/t1/188023/7/11394/126464/60de8b2aE69e8a7c9/5d7fd6971347f9e2.png');
+    background: url('../assets/img/roll/14.png');
 }
 #冷冻饮品展区 #展示模块2上部块1
 {
@@ -1637,7 +1419,7 @@ a{
 }
 #新鲜蔬菜展区 #展示模块2上部块2
 {
-    background: url('https://m.360buyimg.com/babel/jfs/t1/192878/21/11748/110681/60e65983Ea5c2e5fd/a66bc44620b6ee5b.png');
+    background: url('../assets/img/roll/15.jpg');
 }
 #展示模块2{
     height: 580px;

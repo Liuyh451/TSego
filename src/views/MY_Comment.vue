@@ -1,17 +1,17 @@
 <template>
-    <div class="右侧页面">
+    <div class="右侧页面" >
         <el-card class="页面内容" v-for="(item, index) in comment" :key="index" shadow="hover">
             <div class="头像和用户名">
                 <div class="头像">
                     <el-image 
                         style="width: 120px; height: 120px"
-                        :src="item.productUrl"
-                        @click.native="toshop(item.id)">
+                        :src="item.producturl"
+                        @click.native="toshop(item.productid)">
                     </el-image>
                 </div>
-                <div class="用户名">
+                <div class="用户名"  @click="tocontent(item.username)">
                     <div class="title">
-                        {{item.productName}}
+                        {{item.productname}}
                     </div>
                     <div>
                         <!-- <el-rate :v-model="1"></el-rate> -->
@@ -24,7 +24,7 @@
                         :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
                         </el-rate>
                     </div>
-                    <div class="评论">
+                    <div class="评论" >
                         {{item.username}} : “{{item.comment}}”
                     </div>
                 </div>
@@ -59,7 +59,7 @@ export default {
     },
     created(){
         axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-        axios.post("/api/user/comment").then(resp=>{
+        axios.post("http://localhost:9090/comment/user",{"username":JSON.parse(localStorage.currentuser).data.username}).then(resp=>{
             this.comment=resp.data.data
             console.log(this.comment)
         })

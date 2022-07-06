@@ -3,15 +3,15 @@
    <div id="背景" >      </div>
         <div id="左侧"></div>
         <div class ="regist_box">
-            <div style="margin-bottom:20px"><img src="../assets/img/icon1.png" width="50%"></div>
+            <div style="margin-bottom:20px"><img src="../assets/img/icon2.png" width="50%"></div>
                 <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm"  class="demo-ruleForm">
                     <el-form-item prop="username">
                     <el-input  v-model="ruleForm.username" autocomplete="off" prefix-icon="el-icon-user" placeholder="请输入用户名"></el-input>
                 </el-form-item>
-                <el-form-item  prop="e_mail">
+                <!-- <el-form-item  prop="e_mail">
                     <el-input  v-model="ruleForm.e_mail" autocomplete="off" prefix-icon="el-icon-message" placeholder="请输入邮箱"></el-input>
-                </el-form-item>
-                 <el-form-item  prop="vercode">
+                </el-form-item> -->
+                 <!-- <el-form-item  prop="vercode">
                      <div class="验证码">
                         <div id="验证码栏">
                             <el-input  v-model="ruleForm.vercode" autocomplete="off"   placeholder="请输入验证码"></el-input>
@@ -19,9 +19,9 @@
                         <el-button v-show="show" id="获取验证码" type="primary" @click="getvercode">获取验证码</el-button>
                         <el-button disabled v-show="!show" id="获取验证码" type="primary">获取验证码 {{count}}</el-button>
                      </div>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item  prop="pass">
-                    <el-input type="password" v-model="ruleForm.pass" autocomplete="off" prefix-icon="el-icon-lock" show-password placeholder="请输入密码"></el-input>
+                    <el-input type="password" v-model="ruleForm.password" autocomplete="off" prefix-icon="el-icon-lock" show-password placeholder="请输入密码"></el-input>
                 </el-form-item>
                 <el-form-item  prop="checkPass">
                     <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" prefix-icon="el-icon-lock" show-password placeholder="请确认密码"></el-input>
@@ -29,6 +29,7 @@
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
                     <el-button @click="resetForm('ruleForm')">重置</el-button>
+                    <el-button @click="jumpto">登录</el-button>
                 </el-form-item>
                 </el-form>
         </div>
@@ -68,7 +69,7 @@ export default {
     var validatePass2 = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请再次输入密码'))
-      } else if (value !== this.ruleForm.pass) {
+      } else if (value !== this.ruleForm.password) {
         callback(new Error('两次输入密码不一致!'))
       } else {
         callback()
@@ -79,22 +80,24 @@ export default {
     timer: null,
     show: true,
       ruleForm: {
-        pass: '',
-        checkPass: '',
-        age: '',
         username: '',
+        password: '',
+        /* checkPass: '',
         e_mail: '',
         vercode: '',
         vercodeId: 0,
+        age: '' */
+        
+
       },
       rules: {
-        vercode: [{ required: true, message: '请输入验证码', trigger: 'blur' }],
+        //vercode: [{ required: true, message: '请输入验证码', trigger: 'blur' }],
         username: [{ required: true, message: '请输入用户名', trigger: 'blur' },
           { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' },
           { pattern: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/, message: '只能输入汉字、数字、字母', trigger: 'blur' }],
-        e_mail: [{ required: true, message: '请输入邮箱', trigger: 'blur' },
-          { type: 'email', message: '请输入正确的邮箱！', trigger: 'blur' }],
-        pass: [
+        /* e_mail: [{ required: true, message: '请输入邮箱', trigger: 'blur' },
+          { type: 'email', message: '请输入正确的邮箱！', trigger: 'blur' }], */
+        password: [
           { validator: validatePass, trigger: 'blur' },
           { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' },
           { pattern: /^(\w){6,20}$/, message: '只能输入6-20个字母、数字、下划线' }
@@ -123,18 +126,16 @@ export default {
         }
       })
     },
-
+    jumpto(){
+      this.$router.push('/login')
+    },
     regist () {
-      axios.post('http://47.106.193.0:8080/api/user/register', {
-        username: this.ruleForm.username,
-        password: this.ruleForm.pass,
-        email: this.ruleForm.e_mail,
-        verCodeId: this.ruleForm.vercodeId,
-        verCode: this.ruleForm.vercode
-      }).then(res => {
-        console.log(res.data)
-        if (res.data.code === 200) {
-          this.ruleForm.vercodeId = 0
+      JSON.stringify(this.ruleForm)
+      axios.post('http://localhost:9090/user/register',this.ruleForm).then(res => {
+        console.log()
+        if (res.data.code == 200) {
+           console.log(this.res)
+          //this.ruleForm.vercodeId = 0
           this.$notify({
             title: '成功',
             message: '注册成功',
@@ -153,17 +154,18 @@ export default {
     },
 
     login(){
-        const formData = new FormData();
+/*         const formData = new FormData();
         formData.set('username', this.ruleForm.username);
-        formData.set('password', this.ruleForm.pass);
-        axios.post('/api/user/login', formData, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-        ).then(res => {
+        formData.set('password', this.ruleForm.password); */
+        JSON.stringify(this.loginForm)
+        axios.post('http://localhost:9090/user/login', this.ruleForm
+      ).then(res=>{
           var currentuser={
-              username: res.data.data.username,
-              userid: res.data.data.id,
+              username: res.data.username,
+              //userid: res.data.data.id,
               token: res.data.data.token,
-          }
-            localStorage.currentuser=JSON.stringify(currentuser);
+          } 
+            localStorage.setItem('currentuser', JSON.stringify(res.data))
             this.$notify({
                 title: '注册成功，已为您自动登陆',
                 message: '请完善您的个人信息，开启河马生活',
@@ -218,14 +220,14 @@ export default {
 
 <style scoped>
 #背景{
-   position: fixed;
-      top: -200px;
-      left: 0;
+  position: fixed;
+      top: 0px;
+      left: 0px;
       width: 100%;
-      height: 130%;
-      z-index: -10;
-      object-fit: cover;
-      background-image: url('../assets/img/login_background.jpg');
+      height: 100%;
+      z-index: -1;
+      background-size: auto;
+      background-image: url('../assets/img/back.jpg');
 }
 .regist_container{
     margin-top: 10px;
@@ -243,14 +245,17 @@ html, body, #app{
     width: 100%;
 }
 .regist_box {
-    /* margin-top: 100px; */
-    width: 30%;
+
+    width: 20%;
     height: auto;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
     background: #00000060;
     padding: 20px 50px;
     border-radius: 10px;
+    margin-right: 90px;
+    margin-top: 4%;
+    
 }
 .el-form-item__error {
   padding-left: 120px;

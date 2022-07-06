@@ -3,7 +3,7 @@
         <el-card class="页面内容">
             <div class="头像和用户名">
                 <div class="头像">
-                    <el-avatar :size="100" :src="用户信息.avatar" @error="true">
+                    <el-avatar :size="100" :src="用户信息.userurl" @error="true">
                         <img src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
                     </el-avatar>
                 </div>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="注册日期">
                     <span class="内容标题">注册日期：</span>
-                    <span class="标题对应内容">{{用户信息.createTime}}</span>
+                    <span class="标题对应内容">{{用户信息.createtime}}</span>
                 </div>
                 <div class="注册邮箱">
                     <span class="内容标题">注册邮箱：</span>
@@ -70,7 +70,7 @@ export default {
         mou(){
             this.$notify({
             title: '哞一下成功',
-            message: '但此时没有与您一同哞的小河马，请稍后再试',
+            message: '但此时没有与您一同哞的小天生，请稍后再试',
             type: 'warning',
             offset:50
           })
@@ -95,29 +95,29 @@ export default {
             count:'',
             timer: null,
             show: true,
-            用户信息: {
-                // "id": 30,
-                // "username": "河马先生",
-                // "email": "12456789003@123.com",
-                // "phone": "18293635616",
-                // "avatar": "http://47.106.193.0:8080/upload/2021/07/23/c66d1d2172c740f2bfcf0d762348da03.png",
-                // "gender": "男",
-                // "age": 19,
-                // "foodPreference": "新鲜水果",
-                // "signature": "我爱吃！",
-                // "hometown": "甘肃省",
-                // "residentArea": "东南大学九龙湖校区",
-                // "label": "喜欢清淡食物",
-                // "createTime": "2021-07-02 12:05:24"
-            }
+             用户信息: {
+                "id": '',
+                "username": " ",
+                "email": "",
+                 "phone": "",
+                 "userurl": "", 
+                 "gender": "",
+                 "age": '',
+                 /* "foodPreference": "", */
+                 "signature": "",
+                 /* "hometown": "", */
+                 /* "residentArea": "", */
+                 /* "label": "", */
+                 "createtime": ""
+            } 
         } 
     },
     created(){
-        
+        let name=JSON.parse(localStorage.currentuser).data.username
         axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-        axios.post('http://47.106.193.0:8080/api/user/information').then(resp=>{
+        axios.post('http://localhost:9090/user/information',{username:name}).then(resp=>{
             console.log(resp);
-            this.用户信息=resp.data.data.user;
+            this.用户信息=resp.data.data;
         })
         // alert('fuck');
         

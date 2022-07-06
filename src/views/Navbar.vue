@@ -2,17 +2,17 @@
     <div class="顶部集合">
         <div class="导航栏">
             <div class="logo">
-                <img src="../img/logo.png" alt="Logo">
+                <img src="../img/logo2.png"  alt="Logo">
             </div>
             <div class="search">
                 <div style="margin-top: 15px">
                     <el-autocomplete v-model="searchName" :fetch-suggestions="querySearchAsync" placeholder="请输入内容" @select="handleSelect">
                         <el-select v-model="select" slot="prepend" placeholder="商品类别(可选)">
-                            <el-option label="新鲜水果" value="1"></el-option>
-                            <el-option label="海鲜水产" value="2"></el-option>
-                            <el-option label="精选肉类" value="3"></el-option>
-                            <el-option label="冷冻即食" value="4"></el-option>
-                            <el-option label="蔬菜蛋品" value="4"></el-option>
+                            <el-option label="服饰箱包" value="1"></el-option>
+                            <el-option label="电子数码" value="2"></el-option>
+                            <el-option label="护肤彩妆" value="3"></el-option>
+                            <el-option label="百货市场" value="4"></el-option>
+                            <el-option label="汇吃美食" value="5"></el-option>
                         </el-select>
                         <el-button slot="append" icon="el-icon-search" type="success" @click="searchitem"></el-button>
                     </el-autocomplete>

@@ -77,20 +77,29 @@ export default {
                 return;
             }
             var subform = {
-                "products":[]
+                "product":[],
+                "username":JSON.parse(localStorage.currentuser).data.username
             }
-            var subarray=subform.products;
+            var subarray=subform.product;
 
             for (var i=0;i<this.check_list.length;i++){
                 subarray[i]={};
                 subarray[i].id=this.check_list[i].id;
                 subarray[i].quantity=this.check_list[i].quantity;
             }
-            
+            console.log(subarray)
+            subform.product=this.购物车列表
+
+            JSON.stringify(subform)
             axios.defaults.headers.common['Authorization']=JSON.parse(localStorage.currentuser).token;
-            axios.post('http://47.106.193.0:8080/api/order/generation',subform).then(res => {
+            axios.post('http://localhost:9090/order/generation',subform).then(res => {
                 if (res.data.msg==="订单创建成功"){
-                    
+                    this.$notify({
+                title: '订单创建成功',
+                message: res.data.msg,
+                type: 'success',
+                offset: 50
+            })
                     var ids=[];
                     for (var i=0;i<this.check_list.length;i++)
                         ids[i]=this.check_list[i].id;

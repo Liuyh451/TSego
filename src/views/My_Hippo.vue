@@ -3,17 +3,17 @@
         <el-card class="页面内容">
             <div class="头像和用户名">
                 <div class="头像">
-                    <el-avatar :size="100" :src="用户信息.avatar" @error="true">
+                    <el-avatar :size="100" :src="用户信息.userurl" @error="true">
                         <img src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
                     </el-avatar>
                 </div>
                 <div class="用户名">{{用户信息.username}}</div>
             </div>
             <div class="sb">
-                今天是我来河马的第 {{天数}} 天
+                今天是我来天生的第 {{天数}} 天
             </div>
             <div class="sb">
-                在河马，我淘到了 {{(总金额.已支付+总金额.待支付).toFixed(2)}} 元的商品，其中 {{(总金额.待支付).toFixed(2)}} 元等待支付。
+                在天生，我淘到了 {{(总金额.已支付+总金额.待支付).toFixed(2)}} 元的商品
             </div>
         </el-card>
         <el-card class="页面内容">
@@ -25,7 +25,7 @@
                 </el-card>
                 <el-card class="图">
                     <ve-pie :data="类别2" :settings="pieSet"></ve-pie>
-                    我偏好的生鲜种类
+                    我偏好的商品种类
                 </el-card>
             </div>
         </el-card>
@@ -62,19 +62,6 @@ export default {
             类别1:{},
             类别2:{},
             用户信息: {
-                // "id": 30,
-                // "username": "河马先生",
-                // "email": "12456789003@123.com",
-                // "phone": "18293635616",
-                // "avatar": "http://47.106.193.0:8080/upload/2021/07/23/c66d1d2172c740f2bfcf0d762348da03.png",
-                // "gender": "男",
-                // "age": 19,
-                // "foodPreference": "新鲜水果",
-                // "signature": "我爱吃！",
-                // "hometown": "甘肃省",
-                // "residentArea": "东南大学九龙湖校区",
-                // "label": "喜欢清淡食物",
-                // "createTime": "2021-07-02 12:05:24"
             },
             pieSet: {
                 roseType: "radius",
@@ -97,12 +84,12 @@ export default {
             //
             radarSet: {
                 labelMap: {
-                    新鲜水果: "新鲜水果",
-                    海鲜水产: "海鲜水产",
-                    精选肉类: "精选肉类",
-                    冷冻即食: "冷冻即食",
-                    精品生鲜: "精品生鲜",
-                    蔬菜蛋品: "蔬菜蛋品"
+                    服饰箱包: "服饰箱包",
+                    电子数码: "电子数码",
+                    百货市场: "百货市场",
+                    汇吃美食: "汇吃美食",
+                    护肤彩妆: "护肤彩妆",
+                    精品珠宝: "精品珠宝"
                 },
                 areaStyle: {
                 opacity: 0.8,
@@ -111,12 +98,12 @@ export default {
             
             radarChartDataExtend: {
                 radar:{indicator: [
-                { name: '新鲜水果', max: 20},
-                { name: '海鲜水产', max: 20}, 
-                { name: '精选肉类', max: 20},
-                { name: '冷冻即食', max: 20},
-                { name: '蔬菜蛋品', max: 20},
-                { name: '精品生鲜', max: 20} 
+                { name: '服饰箱包', max: 20},
+                { name: '电子数码', max: 20}, 
+                { name: '百货市场', max: 20},
+                { name: '汇吃美食', max: 20},
+                { name: '护肤彩妆', max: 20},
+                { name: '精品珠宝', max: 20} 
                 ]} 
             },
             //
@@ -130,22 +117,29 @@ export default {
     },
     created(){
         
+        
         axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-        axios.post('http://47.106.193.0:8080/api/user/information').then(resp=>{
-            console.log(resp);
-            this.用户信息=resp.data.data.user;
-            var objDate=new Date(this.用户信息.createTime);
+         if (localStorage.getItem('userAvatar')!==null){
+        this.用户信息.userurl=JSON.parse(localStorage.getItem('userAvatar')).userurl
+        this.用户信息.username=JSON.parse(localStorage.getItem('userAvatar')).username
+    }   
+        let date={"createTime": "2022-06-19 12:05:24"}
+            var objDate=new Date(date.createTime);
             var currentTime = Date.now();
             this.天数=((currentTime-objDate)/ (1000 * 60 * 60 * 24)).toFixed(0);
-            axios.post('http://47.106.193.0:8080/api/order/money').then(res2=>{
-                this.总金额=res2.data.data;
-            })
-            axios.post('http://47.106.193.0:8080/api/order/category').then(res3=>{
+             axios.post('http://localhost:9090/order/allsum/buyer',{username:JSON.parse(localStorage.getItem('userAvatar')).username}).then(res2=>{
+                this.总金额.已支付=res2.data.data;
+                console.log(res2.data.data)
+            }) 
+            axios.post('http://localhost:9090/order/selectusercount',{username:JSON.parse(localStorage.getItem('userAvatar')).username}).then(res3=>{
+
                 this.商品种类=res3.data.data; 
-                var 类2={}
+                console.log("111",this.商品种类)
+                 var 类2={}
                 类2.columns=["number", "authentication"],
                 类2.rows=[]
-                var c2=this.商品种类.categorySecond
+                let categorySecond={"categorySecond": {"手机": 2,"平板": 3,"潮流女装": 12,"腕表": 4,"眼部彩妆": 2,"香氛精油": 12,"电脑": 2,"男装": 32,"休闲零食": 49,"精美饮品": 27,"鸡肉": 0}}
+                var c2=categorySecond.categorySecond
                 var namearray=Object.keys(c2);
                 console.log(namearray);
                 var valarray=namearray.map(function(i){return c2[i]})
@@ -159,19 +153,19 @@ export default {
                     类2.rows[p].number=namearray[i];
                     类2.rows[p].authentication=valarray[i];
                 }
-                this.类别2=类2;
+               this.类别2=类2;
 
 
                 var 类1={}
-                类1.columns=['我的偏好','新鲜水果','海鲜水产','精选肉类','冷冻即食','蔬菜蛋品','精品生鲜']
+                类1.columns=['我的偏好','a','b','c','d','e','f']
                 类1.rows=[]
                 
-                类1.rows[0]=this.商品种类.categoryFirst;
+                类1.rows[0]=this.商品种类;
                 类1.rows[0].我的偏好='我的偏好'
                 this.类别1=类1;
             })
-            axios.post('http://47.106.193.0:8080/api/order/time').then(res4=>{
-                this.时间段=res4.data.data.time;
+            let time1={"time": {"01": 8,"02": 2,"03": 11,"04": 2,"05": 11,"06": 7,"07": 9,}}
+                this.时间段=time1.time;
                 var obj=this.时间段;
                 var namearray=Object.keys(obj);
                 console.log(namearray)
@@ -180,7 +174,7 @@ export default {
                 var timetable={}
                 timetable.columns=['时间段','我的下单数']
                 timetable.rows=[]
-                var datearray=['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
+                var datearray=['01', '02', '03', '04', '05', '06', '07']
                 for (var i=0;i<namearray.length;i++){
                     timetable.rows[i]={};
                     timetable.rows[i].时间段=datearray[i];
@@ -188,8 +182,8 @@ export default {
                 }
                 this.时间分布=timetable;
 
-            })    
-        })
+            
+      
         // alert('fuck');
         
     }

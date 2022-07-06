@@ -133,12 +133,7 @@ export default {
     return {
       receiver: [
         {
-          name: ' ',
-          phone: '',
-          province: '',
-          city: '',
-          district: '',
-          address: ''
+
         }
       ],
       addaddressdialogVisible: false,
@@ -163,13 +158,12 @@ export default {
     }
   },
   created () {
+    var subform = {
+                "username":JSON.parse(localStorage.currentuser).data.username}
     axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-    axios.post('http://47.106.193.0:8080/api/user/information', {
-      header: {
-        Authorization: JSON.parse(window.localStorage.getItem('currentuser')).token
-      }
-    }).then(res => {
-      this.receiver = res.data.data.receiver
+    axios.post('http://localhost:9090/adress/information', subform
+    ).then(res => {
+      this.receiver = res.data.data
     })
   },
   methods: {
@@ -206,7 +200,8 @@ export default {
         })
       } else {
         axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-        axios.post('http://47.106.193.0:8080/api/receiver/add', {
+        axios.post('http://localhost:9090/adress/add', {
+          username:JSON.parse(localStorage.currentuser).data.username,
           name: this.newreceiver.name,
           phone: this.newreceiver.phone,
           province: this.newreceiver.province,
@@ -214,7 +209,7 @@ export default {
           district: this.newreceiver.district,
           address: this.newreceiver.address
         }).then(res => {
-          if (res.data.code === 200) {
+          if (res.data.code == 200) {
             this.$notify({
               title: '成功',
               message: res.data.msg,
@@ -242,14 +237,15 @@ export default {
           offset: 50
         })
       } else {
-        axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
+        /* axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
         axios.post('http://47.106.193.0:8080/api/receiver/delete', {
           receiverId: this.receiver[o].id
         }).then(res => {
         })
-        this.receiver.splice(o, 1)
+        this.receiver.splice(o, 1) */
         axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-        axios.post('http://47.106.193.0:8080/api/receiver/add', {
+        axios.post('http://localhost:9090/adress/information/modify', {
+          username:JSON.parse(localStorage.currentuser).data.username,
           name: this.editreceiver.name,
           phone: this.editreceiver.phone,
           province: this.editreceiver.province,
@@ -257,7 +253,7 @@ export default {
           district: this.editreceiver.district,
           address: this.editreceiver.address
         }).then(res => {
-          if (res.data.code === 200) {
+          if (res.data.code == 200) {
             this.$notify({
               title: '成功',
               message: '修改成功',
@@ -273,7 +269,7 @@ export default {
           }
         })
         this.editaddressdialogVisible = false
-        this.receiver.push(this.editreceiver)
+       /*  this.receiver.push(this.editreceiver) */
       }
     },
     edit (o) {

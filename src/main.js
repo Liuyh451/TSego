@@ -11,6 +11,18 @@ Vue.use(vcharts)
 
 
 Vue.use(ElementUI);
+/*↓↓↓↓↓↓↓↓↓↓ 这个部分是解决json格式的问题↓↓↓↓↓↓↓↓↓↓↓ */
+/* Vue.prototype.$axios = axios
+//配置请求的根路径
+axios.defaults.baseURL = '/api' */
+/*↑↑↑↑↑↑↑↑↑↑ 这个部分是解决json格式的问题↑↑↑↑↑↑↑↑↑↑   2022年6月24日21点39分*/
+/*↓↓↓↓↓↓↓↓↓↓ 这个部分是解决json格式的问题↓↓↓↓↓↓↓↓↓↓↓ */
+/* Vue.prototype.$http=axios.create({
+  headers:{
+    'Content-Type': 'application/json'
+  }
+}) */
+/*↑↑↑↑↑↑↑↑↑↑ 这个部分是解决json格式的问题↑↑↑↑↑↑↑↑↑↑   2022年6月24日21点39分*/
 document.write ('<body style="margin-left: -10px">');
 axios.interceptors.response.use(response => {
     if (response) {
@@ -56,22 +68,39 @@ new Vue({
 router.beforeEach((to, from, next) => {
     /* 路由发生变化修改页面title */
     //   document.title = to.meta.title
-      if (to.path === '/login' || to.meta.token_require===false) {
+      if (to.path === '/login' || to.meta.token_require===false&&to.meta.admin_require===false) {
         document.title = to.meta.title
         next();
       } 
-      else {
+      else if(to.meta.token_require===true){
         if (!localStorage.hasOwnProperty('currentuser')){
             ElementUI.Notification({
                 title: '警告',
-                message: '请先登陆河马生鲜',
+                message: '请先登陆天生易购',
                 type: 'warning',
                 offset:50
             });
             next('/login')
         }
         else{
+          if(to.meta.admin_require===true){
+            if (JSON.parse(localStorage.currentuser).data.username!="lyh"){
+              ElementUI.Notification({
+                  title: '警告',
+                  message: '您没有权限访问',
+                  type: 'warning',
+                  offset:50
+              });
+              next('/finalhome')
+            }
+              else{
+                next();
+              }
+          }
+          else{
             next();
+          }
+            //next();
             // let token = localStorage.getItem('currentuser')
             // if (token === 'null' || token === '') {
             //     // alert('fuck');
@@ -82,7 +111,9 @@ router.beforeEach((to, from, next) => {
         }
     }
     next()
+    
   })
+
 
 
 import  VueQuillEditor from 'vue-quill-editor'

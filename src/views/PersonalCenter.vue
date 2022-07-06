@@ -30,7 +30,7 @@
                 <el-menu-item index="/myhippo">
                     <template slot="title">
                         <i class="el-icon-location"></i>
-                        <span>我的河马</span>
+                        <span>我的天生</span>
                     </template>
                 </el-menu-item>
             </el-menu>

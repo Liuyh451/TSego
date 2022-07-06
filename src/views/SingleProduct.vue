@@ -26,12 +26,12 @@
                         <div>{{name}}</div>
                         </div>
                         <div class="疫情相关">
-                            【本产品已通过核酸检测】河马生鲜，保证您的食品安全，为您的健康保驾护航。
+                            【本产品已通过核酸检测】天生易购，保证您的安全，为您的健康保驾护航。
                         </div>
                     <div id="商品其他信息">
                         <el-card shadow="never">
                             <div class="内容标题">
-                                <div id="商品价格"><p>河马优价: ￥{{price}}</p></div>
+                                <div id="商品价格"><p>天生优价: ￥{{price}}</p></div>
                                 <div>商品状态 ：【在售】</div>
                                 <div>商品总库存 ：【{{stock}}】件</div>
                                 <div>商品总销量 ：【{{saleamount}}】件</div>
@@ -82,7 +82,7 @@
                             <div :v-if="comment.length!=0" v-for="(o, index) in comment" :key="index" id="单条评论">
                                 <div id="评论用户" :v-if="comment.length!=0">
                                     <div id="评论用户头像">
-                                        <img :src="comment[index].userAvatar" width="120px" height="120px">
+                                        <img :src="comment[index].useravatar" width="120px" height="120px">
                                     </div>
                                     <div id="评论用户名">
                                         <p>{{comment[index].username}}</p>
@@ -152,7 +152,7 @@
                  <div id="单个商品块" v-for="(o,  index ) in products" :key="index">
                     <div id="单个商品图片">
                         <a href="javascript:void(0);" @click="toshop(o.id)">
-                            <img :src="o.pictureUrl"  width="150px" height="150px">
+                            <img :src="o.pictureurl"  width="150px" height="150px">
                         </a>
                     </div>
                     <div id="单个商品名称">
@@ -220,8 +220,8 @@ a{
     margin-left: -10px;
 }
 /* -----------------------评论区------------- */
-#评论区{
-}
+/* #评论区{
+} */
 #单条评论, #写评论{
     display: flex;
     flex-direction: row;
@@ -262,7 +262,7 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("../assets/img/inner-bg.jpg");
+    background: url("../assets/img/innerbg.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -548,7 +548,8 @@ export default {
   },
   created () {
       this.PageSearch=this.$route.query.productname;
-        if (!localStorage.hasOwnProperty('tempcart')){
+       this.id = Number(this.$route.query.id)
+       if (!localStorage.hasOwnProperty('tempcart')){
             console.log('没有本地购物车缓存,将创建Vue缓存');
             localStorage.tempcart=JSON.stringify(this.购物车列表);
         }
@@ -558,28 +559,30 @@ export default {
         }
     this.id = Number(this.$route.query.id)
     if (localStorage.getItem('userAvatar')!==null){
-        this.nowuser.name=JSON.parse(localStorage.getItem('userAvatar')).user.username
-        this.nowuser.avatar=JSON.parse(localStorage.getItem('userAvatar')).user.avatar
+        this.nowuser.name=JSON.parse(localStorage.getItem('userAvatar')).username
+        this.nowuser.avatar=JSON.parse(localStorage.getItem('userAvatar')).userurl
     }
     if (localStorage.getItem('currentuser') !== null) {
       this.nowuser.name = JSON.parse(localStorage.getItem('currentuser')).username
-    }
-    axios.post('http://47.106.193.0:8080/api/product/getone', {
+    } 
+    axios.post('http://localhost:9090/product/getone', {
       id: this.id
     }).then(res => {
+      console.log("-----------------",this.res)
       this.name = res.data.data.name
       this.price = res.data.data.price
-      this.saleamount = res.data.data.sales_amount
+      this.saleamount = res.data.data.salesamount
+
       this.stock = res.data.data.stock
-      this.details = res.data.data.detail
-      this.pictureOne = res.data.data.pictureUrlOne
-      this.pictureTwo = res.data.data.pictureUrlTwo
-      this.pictureThree = res.data.data.pictureUrlThree
-      this.pictureFour = res.data.data.pictureUrlFour
+      /* this.details = res.data.data.detail */
+      this.pictureOne = res.data.data.pictureurl
+      this.pictureTwo = res.data.data.pictureurltwo
+      this.pictureThree = res.data.data.pictureurlthree
+      this.pictureFour = res.data.data.pictureurlfour
       this.category_first = res.data.data.categoryFirst
-      this.saleamount=res.data.data.salesAmount
-      axios.post('http://47.106.193.0:8080/api/product', {
-        pageNum: 6,
+      //this.saleamount=res.data.data.salesAmount 
+      /* 相关商品 */
+     axios.post('http://localhost:9090/product/search', {
         categoryFirst: this.category_first
       }).then(res => {
         this.products = res.data.data
@@ -587,8 +590,8 @@ export default {
     })
     // this.originplace = res.data.data.originPlace
     axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-    axios.post('http://47.106.193.0:8080/api/product/comment', {
-      productId: this.id
+    axios.post('http://localhost:9090/comment/product', {
+      productid: this.id
     }).then(res => {
       console.log(res.data)
       if (Array.isArray(res.data.data))
@@ -662,10 +665,13 @@ export default {
           })
         } else {
           axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-          axios.post('http://47.106.193.0:8080/api/user/makecomment', {
+          axios.post('http://localhost:9090/comment/add', {
             comment: this.nowuser.comment,
-            productId: this.id,
-            star: this.nowuser.star
+            productid: this.id,
+            star: this.nowuser.star,
+            username:JSON.parse(localStorage.currentuser).data.username,
+            useravatar:JSON.parse(localStorage.getItem('userAvatar')).userurl,
+            producturl:this.pictureOne
           }).then(res => {
             console.log(res.data)
             this.$notify({
@@ -701,7 +707,8 @@ export default {
                 "productPicture" :this.pictureOne,
                 "productPrice": this.price,
                 "productName": this.name,
-                "quantity": this.productnum
+                "quantity": this.productnum,
+                "categoryfirst":this.category_first
             }
             this.购物车列表.push(pushitem);
         }

@@ -38,31 +38,16 @@
                         <h3>商品类别</h3>
                         <div class='hr'></div>
                         <el-checkbox-group v-model="checklist" class="checkbox">
-                            <p><el-checkbox label="新鲜水果"></el-checkbox></p>
-                            <p><el-checkbox label="海鲜水产"></el-checkbox></p>
-                            <p><el-checkbox label="精选肉类"></el-checkbox></p>
-                            <p><el-checkbox label="冷冻即食"></el-checkbox></p>
-                            <p><el-checkbox label="蔬菜蛋品"></el-checkbox></p>
+                            <p><el-checkbox label="服饰箱包"></el-checkbox></p>
+                            <p><el-checkbox label="电子数码"></el-checkbox></p>
+                            <p><el-checkbox label="护肤彩妆"></el-checkbox></p>
+                            <p><el-checkbox label="百货市场"></el-checkbox></p>
+                            <p><el-checkbox label="汇吃美食"></el-checkbox></p>
                         </el-checkbox-group>
                     </div>
                 </div>
                 <div class="筛选搜索">
                     <el-button type="success" round @click="updateproducts(0,0,1)">商品筛选</el-button>
-                </div>
-                <div class="推荐商品">
-                    <div class="标题">
-                        <h3>猜你喜欢</h3>
-                    </div>
-                    <div class='hr'></div>
-                    <el-card shadow="hover" class="商品格" v-for="(value,index) in 商品推荐列表" :key="index">
-                        <div class="商品图片格">
-                            <img :src="value.pictureUrl" width="92%">
-                        </div>
-                        <div class="商品价格">¥{{value.price.toFixed(2)}}</div>
-                        <div class="商品标题">
-                            {{value.name}}
-                        </div>
-                    </el-card>
                 </div>
             </div>
             <div class="右侧商品栏">
@@ -79,7 +64,7 @@
                 <div class="商品栏">
                 <el-card shadow="hover" class="商品格" v-for="(value,index) in 商品列表" :key="index" v-loading="cardloading">
                     <div class="商品图片格" @click="toshop(value.id)">
-                        <img :src="value.pictureUrl" width="92%">
+                        <img :src="value.pictureurl" width="92%">
                     </div>
                     <div class="销量和价格">
                         <div class="商品价格">¥{{value.price.toFixed(2)}}</div>
@@ -122,23 +107,23 @@ export default {
     data :function(){
         return {
             cardloading:true,
-            searchHits:0,
+            searchHits:30,
             currentorder:0,
             currentPage:1,
             orderrank:[0,0,1,0],
             maxbar:0,
             PageSearch:'',
-            PageNum:12,
+            PageNum:6,
             TotalPage:10,
             商品列表:[],
             productnum:[],//计数器里的数字
             购物车列表:[],
             商品推荐列表:[],
             PriceRange:[0,86.9],
-            dynamicTags: ['新鲜水果', '当季热销','夏日美味','日推','生鲜周周推荐','天天美味','精品上新'],
+            dynamicTags: ['优惠促销', '当季热销','夏日美味','日推','周周推荐','天天美味','精品上新'],
             inputVisible: false,
             inputValue: '',
-            checklist:['新鲜水果','海鲜水产','精选肉类','蔬菜蛋品']
+            checklist:['服饰箱包','电子数码','护肤彩妆','百货市场','汇吃美食']
         }
     },
     components:{
@@ -158,7 +143,7 @@ export default {
                 this.pagechange()
             },
             pagechange(){
-                this.updateproducts(this.currentorder,this.orderrank[this.currentorder],this.currentPage);
+                this.updateproducts();
             },
             getorderrank(id){
                 this.orderrank[id]=!this.orderrank[id];
@@ -167,14 +152,12 @@ export default {
             handleClose(tag) {
                 this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
             },
-
             showInput() {
                 this.inputVisible = true;
                 this.$nextTick(_ => {
                 this.$refs.saveTagInput.$refs.input.focus();
                 });
             },
-
             handleInputConfirm() {
                 let inputValue = this.inputValue;
                 if (inputValue) {
@@ -183,49 +166,29 @@ export default {
                 this.inputVisible = false;
                 this.inputValue = '';
             },
-        updateproducts(sort,order,page){
+        updateproducts(){
             this.cardloading=true
-            this.currentorder=sort;
+            //this.currentorder=sort;
             // alert(this.PageSearch);
             var goodslist=[];
-            axios.post("/api/product/search", 
+            axios.post("http://localhost:9090/product/search1", 
             {
-                'product-name': this.PageSearch, 
-                'page-num': this.PageNum,
+                name:this.PageSearch
+             /*    'page-num': this.PageNum,
                 'sort': sort,
                 'order': order,
                 'page': page-1,
                 'lower-bound' : this.PriceRange[0],
-                'upper-bound' : this.PriceRange[1],
+                'upper-bound' : this.PriceRange[1], */
             }
             ).then(res => {
                 console.log(res.data.data[0]);
-                this.商品列表=res.data.data[0];
-                for (var i=0;i<this.商品列表.length;i++){
-                    this.productnum[this.商品列表[i].id]=1;
-                }
-                this.maxbar=res.data.data[1].maxPrice;
-                this.PriceRange[1]=res.data.data[1].maxPrice;
-                this.searchHits=res.data.data[1].searchHit;
-
-                this.$scrollTo()
+                this.商品列表=res.data.data;
+                              this.$scrollTo()
                 this.cardloading=false;
-            })
-        },
-        updaterecommend(){
-            var goodslist=[];
-            axios.post("/api/product/recommend", {'product-name': this.PageSearch, 'page-num': 4}).then(res => {
-                console.log(res.data.data[0]);
-                this.商品推荐列表=res.data.data[0];
-            })
-        },
 
-        parenttest(){
-            alert("this is parent")
-        },
-        navtest(){
-            this.$refs.nav_ins.navtest();
-        },
+            })
+        }, 
         addToCart(productid){
             this.$notify({
                 title: '添加成功',
@@ -248,10 +211,11 @@ export default {
                     if (this.商品列表[i].id===productid){
                         var pushitem={
                             "id": this.商品列表[i].id,
-                            "productPicture" :this.商品列表[i].pictureUrl,
+                            "productPicture" :this.商品列表[i].pictureurl,
                             "productPrice": this.商品列表[i].price,
                             "productName": this.商品列表[i].name,
-                            "quantity": this.productnum[productid]
+                            "quantity": this.productnum[productid],
+                            "categoryfirst":this.商品列表[i].categoryFirst,
                         }
                         this.购物车列表.push(pushitem);
                         break;
@@ -261,10 +225,18 @@ export default {
             localStorage.tempcart=JSON.stringify(this.购物车列表);//更新本次缓存
             this.$refs.nav_ins.getlocalcart();//更新导航栏购物车
         },
+        parenttest(){
+            alert("this is parent")
+        },
+        navtest(){
+            this.$refs.nav_ins.navtest();
+        },
+
     },
     created(){
+        
         this.PageSearch=this.$route.query.productname;
-        if (!localStorage.hasOwnProperty('tempcart')){
+         if (!localStorage.hasOwnProperty('tempcart')){
             console.log('没有本地购物车缓存,将创建Vue缓存');
             localStorage.tempcart=JSON.stringify(this.购物车列表);
         }
@@ -272,11 +244,22 @@ export default {
             this.购物车列表=JSON.parse(localStorage.tempcart);
             // alert('已经找到本地购物车缓存,将同步缓存');
         }
+     /*    axios
+      .post("http://localhost:9090/product/search1", {
+        name:this.PageSearch ,
+      })
+      .then((res) => {
+        console.log("111111", this.res);
+        this.商品列表= res.data.data;
+        console.log(this.商品列表);
+          this.cardloading=false;
+      }); */
+
     },
     mounted(){
         this.$refs.nav_ins.searchName=this.PageSearch;
-        this.updateproducts(0,0,1);
-        this.updaterecommend();
+        this.updateproducts();
+
     }
 }
 </script>
@@ -435,7 +418,6 @@ export default {
     .商品栏 .商品格 .计数器{
         height: 45px;
     }
-
     .商品栏 .商品格 .按钮栏{
         text-align: center;
     }

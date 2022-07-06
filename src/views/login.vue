@@ -2,7 +2,7 @@
     <div class="login_container">
       <div id="背景">      </div>
         <div class ="login_box">
-            <div style="margin-bottom:20px"><img src="../assets/img/icon1.png" width="50%"></div>
+            <div style="margin-bottom:20px"><img src="../assets/img/icon2.png" width="50%"></div>
             <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules">
                 <!--用户名-->
                 <el-form-item prop="username">
@@ -20,7 +20,6 @@
         </div>
     </div>
 </template>
-
 <script>
 const axios = require('axios');
 export default {
@@ -47,10 +46,17 @@ export default {
       const formData = new FormData();
       formData.set('username', this.loginForm.username);
       formData.set('password', this.loginForm.password);
+/*        axios.defaults.headers = {
 
-      axios.post('http://47.106.193.0:8080/api/user/login', formData
+'Content-type': 'application/json'
+
+}  */
+      JSON.stringify(this.loginForm)
+      
+      axios.post('http://localhost:9090/user/login', this.loginForm
       ).then(res => {
-          if (res.data.code===200){
+        console.log("dsadsadd---------------",res);
+          if (res.data.code==200){
             this.$notify({
                 title: '登陆成功，自动跳转到主页',
                 message: res.data.msg,
@@ -62,13 +68,16 @@ export default {
                 userid: res.data.data.id,
                 token: res.data.data.token,
             }
-            localStorage.setItem('currentuser', JSON.stringify(res.data.data))
-            axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
-            axios.post('http://47.106.193.0:8080/api/user/information').then(res => {
-            console.log(res.data)
-            localStorage.setItem('userAvatar', JSON.stringify(res.data.data))
+            localStorage.setItem('currentuser', JSON.stringify(res.data))
+            /* 用来获取用户头像 */
+            let name=JSON.parse(localStorage.currentuser).data.username
+        axios.defaults.headers.common.Authorization = JSON.parse(localStorage.currentuser).token
+        axios.post('http://localhost:9090/user/information',{username:name}).then(resp=>{
+            console.log("用户头像！！！！！！！！！！",resp);
+            localStorage.setItem('userAvatar', JSON.stringify(resp.data.data))
+        })
+          
             this.$router.push('/finalhome')
-            })
           }
           else{
               this.$notify.error({
@@ -76,10 +85,12 @@ export default {
                 message: res.data.msg,
                 offset: 50
                 })
-
           }
         })
+      
+     
     },
+    
     login_to_regist () {
       this.$router.push('/regist')
     }
@@ -103,22 +114,24 @@ html, body, #app{
     align-items: center;
 }
 .login_box {
-    width: 30%;
+    width: 20%;
     height: auto;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
     background: #00000060;
     padding: 20px 50px;
     border-radius: 30px;
+    margin-right: 90px;
+    margin-top: -1%;
 }
 #背景{
-   position: fixed;
-      top: -200px;
-      left: 0;
+  position: fixed;
+      top: 0px;
+      left: 0px;
       width: 100%;
-      height: 130%;
-      z-index: -10;
-      object-fit: cover;
-      background-image: url('../assets/img/login_background.jpg');
+      height: 100%;
+      z-index: -1;
+      background-size: auto;
+      background-image: url('../assets/img/back.jpg');
 }
 </style>

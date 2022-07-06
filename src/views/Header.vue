@@ -8,11 +8,14 @@
                 <!-- <el-menu-item index="/goodslist">商品列表页</el-menu-item> -->
                 <el-menu-item index="/myordercenter">订单中心</el-menu-item>
                 <el-menu-item index="/myinformation">个人中心</el-menu-item>
-                <el-menu-item index="/myhippo">我的河马画像</el-menu-item>
-                <el-menu-item index="/hippoforum">Hippo论坛</el-menu-item>
+                <el-menu-item index="/myhippo">我的天生画像</el-menu-item>
+                <el-menu-item index="/hippoforum">天生论坛</el-menu-item>
+                <el-menu-item index="/sellerback1">卖家管理</el-menu-item>
                 <el-submenu index="4" class="用户头像">
                     <template #title>
-                        <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" size="medium"></el-avatar>
+                        <el-avatar size="medium" :src="用户信息.userurl" @error="true">
+                        <img src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
+                    </el-avatar>
                     </template>
                     <el-menu-item index="/mymodifyinformation" class="展开菜单 头像展开菜单">个人信息管理</el-menu-item>
                     <el-menu-item index="/login" class="展开菜单 头像展开菜单" @click.native="logout">退出登陆</el-menu-item>
@@ -23,16 +26,45 @@
 </template>
 
 <script>
+const axios = require('axios');
 export default {
+    data()
+    {
+        return{
+            用户信息: {
+                "id": '',
+                "username": " ",
+                "email": "",
+                 "phone": "",
+                 "userurl": "", 
+                 "gender": "",
+                 "age": '',
+                 /* "foodPreference": "", */
+                 "signature": "",
+                 /* "hometown": "", */
+                 /* "residentArea": "", */
+                 /* "label": "", */
+                 "createtime": ""
+            } 
+        }
+    },
     methods:{
+        
         logout(){
             localStorage.removeItem('currentuser');
+            localStorage.removeItem('userAvatar');
             this.$notify.success({
                 title: '退出登陆成功',
                 message: "请重新登陆",
                 offset:50
             })
         }
+    },
+    created(){
+        
+        if (localStorage.getItem('userAvatar')!==null){
+        this.用户信息.userurl=JSON.parse(localStorage.getItem('userAvatar')).userurl
+    }
     }
 }
 </script>
